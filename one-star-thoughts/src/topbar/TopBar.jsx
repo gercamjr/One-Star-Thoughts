@@ -19,7 +19,7 @@ export default function TopBar() {
                 </ul>
             </div>
             <div className="topBar__profileIcon">
-                <img src="../../assets/img/cropped-onestar-logo-1-1.png" alt="one black 5 pointed star" className="topBar__profileIcon--img"/>
+                <img src="../../assets/img/one-star-logo-2.png" alt="one black 5 pointed star" className="topBar__profileIcon--img"/>
                 <FontAwesomeIcon icon="search" className="topBar__profileIcon--search" />
             </div>
         </div>
