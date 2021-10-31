@@ -1,4 +1,17 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Custom properties */
+
 :root {
+    --ff-primary: 'Josefin Sans', sans-serif;
+    --ff-secondary: 'Lora', serif;
+    --fw-reg: 300;
+    --fw-bold: 900;
     --clr-dark: #193334;
     --clr-light: #B5BACD;
     --clr-primary: #607286;
@@ -7,14 +20,76 @@
     --fs-social: 2rem;
     --fs-navMenu: 1.75rem;
     --fs-searchIcon: 1.7rem;
+    --fs-body: 1rem;
     --fw-navMenu: 300;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+}
+
+@media (min-width: 900px) {
+     :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+/* General Styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: white;
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold)
+}
+
+:focus {
+    outline: 3px solid var(--clr-dark-accent);
+    outline-offset: 3px;
 }
 
 
 /* typography */
 
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--fs-h1)
+}
+
+h2 {
+    font-size: var(--fs-h2)
+}
+
+h3 {
+    font-size: var(--fs-h3)
+}
+
 .topBar {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--ff-primary);
     color: var(--clr-light);
 }
 
@@ -35,6 +110,11 @@
     .topBar__navMenu {
         font-size: 12px;
     }
+}
+
+.header {
+    font-family: var(--ff-secondary);
+    color: var(--clr-primary);
 }
 
 
@@ -89,4 +169,21 @@
 .topBar__navMenu--menu--item {
     margin-right: 20px;
     cursor: pointer;
+}
+
+
+/* header section for home page */
+
+.header {
+    background-image: url("../assets/img/header.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 400px;
+    color: var(--clr-light);
+    text-align: center;
+    padding-top: 1.5em;
+}
+
+.header__title {
+    margin-bottom: .5em;
 }
