@@ -1,3 +1,22 @@
+:root {
+    --clr-dark: #193334;
+    --clr-light: #B5BACD;
+    --clr-primary: #607286;
+    --clr-accent: #8F9CAF;
+    --clr-dark-accent: #344755;
+}
+
+
+/* typography */
+
+.topBar {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--clr-light);
+}
+
+
+/* topBar styles */
+
 .topBar {
     width: 100%;
     height: 5em;
@@ -5,7 +24,7 @@
     top: 0;
     display: flex;
     align-items: center;
-    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--clr-dark-accent);
 }
 
 .topBar__socialMedia,
@@ -15,4 +34,13 @@
 
 .topBar__navMenu {
     flex: 6;
+}
+
+.topBar__socialMedia--item {}
+
+.topBar__profileIcon--img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    object-fit: cover;
 }
