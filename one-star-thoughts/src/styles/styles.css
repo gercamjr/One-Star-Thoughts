@@ -10,6 +10,7 @@
 :root {
     --ff-primary: 'Josefin Sans', sans-serif;
     --ff-secondary: 'Lora', serif;
+    --ff-sidebar: 'Varela Round', sans-serif;
     --fw-reg: 300;
     --fw-bold: 900;
     --clr-dark: #193334;
@@ -125,6 +126,11 @@ h3 {
     font-size: var(--fs-h3);
 }
 
+.sidebar {
+    color: var(--clr-light);
+    font-family: var(--ff-sidebar);
+}
+
 
 /* topBar styles */
 
@@ -217,4 +223,53 @@ h3 {
         width: 8em;
         height: 8em;
     }
+}
+
+
+/* home page styles */
+
+.home {
+    display: flex;
+}
+
+.posts {
+    flex: 9;
+}
+
+.sidebar {
+    flex: 3;
+    margin: 0;
+    padding-bottom: 30px;
+    background-color: var(--clr-dark-accent);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__item--title {
+    margin: .7em;
+    padding: .7em;
+    width: 90%;
+    border-top: 1px solid var(--clr-light);
+    border-bottom: 1px solid var(--clr-light);
+    text-align: center;
+}
+
+.sidebar__item--categories--list {
+    list-style: none;
+    margin-bottom: 1em;
+    text-align: center;
+    margin-right: 2em;
+}
+
+.sidebar__item--categories--list-item {
+    cursor: pointer;
+    text-align: center;
 }
