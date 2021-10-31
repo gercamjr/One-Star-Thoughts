@@ -4,6 +4,10 @@
     --clr-primary: #607286;
     --clr-accent: #8F9CAF;
     --clr-dark-accent: #344755;
+    --fs-social: 2rem;
+    --fs-navMenu: 1.75rem;
+    --fs-searchIcon: 1.7rem;
+    --fw-navMenu: 300;
 }
 
 
@@ -12,6 +16,25 @@
 .topBar {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--clr-light);
+}
+
+.topBar__socialMedia {
+    font-size: var(--fs-social);
+}
+
+.topBar__navMenu {
+    font-size: var(--fs-navMenu);
+    font-weight: var(--fw-navMenu);
+}
+
+.topBar__profileIcon--search {
+    font-size: var(--fs-searchIcon);
+}
+
+@media screen and(max-width: 800px) {
+    .topBar__navMenu {
+        font-size: 12px;
+    }
 }
 
 
@@ -30,17 +53,40 @@
 .topBar__socialMedia,
 .topBar__profileIcon {
     flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .topBar__navMenu {
     flex: 6;
 }
 
-.topBar__socialMedia--item {}
+.topBar__navMenu--menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.topBar__socialMedia--item {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.topBar__profileIcon--img,
+.topBar__profileIcon--search {
+    margin-left: 15px;
+    cursor: pointer;
+}
 
 .topBar__profileIcon--img {
     width: 2.5em;
     height: 2.5em;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.topBar__navMenu--menu--item {
+    margin-right: 20px;
+    cursor: pointer;
 }
