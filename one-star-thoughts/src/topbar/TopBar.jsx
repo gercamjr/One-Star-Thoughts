@@ -4,24 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function TopBar() {
     return(
         <div className="topBar">
-            <div className="topBar__socialMedia">
-                <FontAwesomeIcon icon={['fab', 'apple']} className="topBar__socialMedia--item" />
-                <FontAwesomeIcon icon={['fab', 'microsoft']} className="topBar__socialMedia--item"/>
-                <FontAwesomeIcon icon={['fab', 'google']} className="topBar__socialMedia--item"/>
-            </div>
-            <div className="topBar__navMenu">
-                <ul className="topBar__navMenu--menu">
-                    <li className="topBar__navMenu--menu--item">Home</li>
-                    <li className="topBar__navMenu--menu--item">About</li>
-                    <li className="topBar__navMenu--menu--item">Contact</li>
-                    <li className="topBar__navMenu--menu--item">Write</li>
-                    <li className="topBar__navMenu--menu--item">Logout</li>
-                </ul>
-            </div>
-            <div className="topBar__profileIcon">
-                <img src="../../assets/img/one-star-logo-2.png" alt="one black 5 pointed star" className="topBar__profileIcon--img"/>
-                <FontAwesomeIcon icon="search" className="topBar__profileIcon--search" />
-            </div>
+           
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">Contact</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">Write</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">Profile</a></li>
+            </ul>
+        </nav>
         </div>
     )
 }
