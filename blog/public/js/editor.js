@@ -1,5 +1,5 @@
-const blogTitleField = document.querySelector('.blog__title');
-const articleFeild = document.querySelector('.blog__article');
+const blogTitleField = document.querySelector('.blog__editor--title');
+const articleField = document.querySelector('.blog__editor--article');
 
 // banner
 const bannerImage = document.querySelector('#banner-upload');
@@ -41,15 +41,17 @@ const uploadImage = (uploadFile, uploadType) => {
 }
 
 const addImage = (imagepath, alt) => {
-    let curPos = articleFeild.selectionStart;
+    console.log("going to add the image text into the article");
+    let curPos = articleField.selectionStart;
     let textToInsert = `\r![${alt}](${imagepath})\r`;
-    articleFeild.value = articleFeild.value.slice(0, curPos) + textToInsert + articleFeild.value.slice(curPos);
+    console.log("text to insert: " + textToInsert);
+    articleField.value = articleField.value.slice(0, curPos) + textToInsert + articleField.value.slice(curPos);
 }
 
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 publishBtn.addEventListener('click', () => {
-    if (articleFeild.value.length && blogTitleField.value.length) {
+    if (articleField.value.length && blogTitleField.value.length) {
         // generating id
         let letters = 'abcdefghijklmnopqrstuvwxyz';
         let blogTitle = blogTitleField.value.split(" ").join("-");
@@ -65,7 +67,7 @@ publishBtn.addEventListener('click', () => {
         //access firstore with db variable;
         db.collection("blogs").doc(docName).set({
                 title: blogTitleField.value,
-                article: articleFeild.value,
+                article: articleField.value,
                 bannerImage: bannerPath,
                 publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
             })
