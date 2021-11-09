@@ -43,7 +43,7 @@ app.use((req, res) => {
     res.json("404");
 })
 
-app.get("/dashboard", (req, res) => {
+app.get("/admin", (req, res) => {
     res.sendFile(path.join(initial_path, "dashboard.html"));
 })
 
