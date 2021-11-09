@@ -37,3 +37,11 @@ app.post('/upload', (req, res) => {
         }
     })
 })
+
+app.get("/:blog", (req, res) => {
+    res.sendFile(path.join(initial_path, "post.html"));
+})
+
+app.use((req, res) => {
+    res.json("404");
+})
