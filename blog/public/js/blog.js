@@ -22,6 +22,18 @@ const setupBlog = (data) => {
     publish.innerHTML += data.publishedAt;
     publish.innerHTML += `-- ${data.author}`;
 
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            let editBtn = document.getElementById('edit-blog-btn');
+            editBtn.style.display = "inline";
+            editBtn.href = `${blogId}/editor`;
+
+        } else {
+
+        }
+
+    })
+
     const article = document.querySelector('.blog__published--article');
     addArticle(article, data.article);
 }
