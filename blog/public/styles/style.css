@@ -327,6 +327,8 @@ header {
 /* section posts */
 
 .section__posts {
+    position: relative;
+    z-index: 10;
     max-width: 900px;
     margin: 0 auto;
     padding: 10rem 2rem;
@@ -390,6 +392,11 @@ p:last-child {
     transition-delay: calc(.2s + (.04s * var(--char-index)));
 }
 
+[data-scroll=in] .char:after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .section__posts--card--button {
     margin: 0 10px;
 }
@@ -448,7 +455,7 @@ p:last-child {
 .blog__editor {
     width: 70vw;
     min-width: 400px;
-    height: 100px;
+    height: 100%;
     display: block;
     margin: auto;
     padding: 50px 0;
@@ -494,12 +501,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .blog__editor--options {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: #fff;
+    position: relative;
     z-index: 9;
     display: flex;
     justify-content: center;
@@ -513,6 +515,7 @@ textarea::-webkit-scrollbar-thumb {
 /* content area */
 
 .blog__published {
+    background: var(--clr-light);
     display: flex;
     flex-direction: column;
     align-items: center;
