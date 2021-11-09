@@ -25,7 +25,7 @@ const setupLoginButton = () => {
             }
         },
         signInFlow: "popup",
-        signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
+        signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID]
     })
 }
 
