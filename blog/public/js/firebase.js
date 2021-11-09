@@ -14,6 +14,6 @@ let db = firebase.firestore();
 let auth = firebase.auth();
 
 const logoutUser = () => {
-    auth.signOout();
+    auth.signOut();
     location.reload();
 }
