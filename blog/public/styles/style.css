@@ -255,6 +255,7 @@ header {
 /* section posts */
 
 .section__posts {
+    word-break: break-word;
     width: 100%;
     padding: 50px 5vw;
     display: grid;
@@ -472,4 +473,8 @@ textarea::-webkit-scrollbar-thumb {
     text-align: center;
     position: relative;
     margin: 100px 0 20px;
+}
+
+#edit-blog-btn {
+    display: none;
 }

@@ -20,6 +20,7 @@ const setupBlog = (data) => {
 
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
+    publish.innerHTML += `-- ${data.author}`;
 
     const article = document.querySelector('.blog__published--article');
     addArticle(article, data.article);
