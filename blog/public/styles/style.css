@@ -475,6 +475,12 @@ textarea::-webkit-scrollbar-thumb {
     margin: 100px 0 20px;
 }
 
+.dashboard__btn {
+    display: block;
+    width: 11em;
+    margin: 0 auto;
+}
+
 #edit-blog-btn {
     display: none;
 }
