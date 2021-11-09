@@ -18,3 +18,22 @@ app.listen("3000", () => {
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(initial_path, 'admin.html'));
 })
+
+app.post('/upload', (req, res) => {
+    let file = req.files.image;
+    let date = new Date();
+    // image name
+    let imagename = date.getDate() + date.getTime() + file.name;
+    // image upload path
+    let path = 'public/uploads/' + imagename;
+
+    // create upload
+    file.mv(path, (err, result) => {
+        if (err) {
+            throw err;
+        } else {
+            // our image upload path
+            res.json(`uploads/${imagename}`)
+        }
+    })
+})
