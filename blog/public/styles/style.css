@@ -14,7 +14,9 @@
     --fw-bold: 900;
     --clr-light: #fff;
     --clr-dark: #303030;
+    --clr-grey: lightgrey;
     --clr-accent: #16e0bd;
+    --clr-danger: tomato;
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
@@ -273,9 +275,23 @@ header {
     line-height: 30px;
 }
 
+.section__posts--card--button {
+    margin: 0 10px;
+}
+
 .btn.dark {
-    background: #1b1b1b;
-    color: #fff;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.btn.grey {
+    background: var(--clr-grey);
+    color: var(--clr-dark);
+}
+
+.btn.danger {
+    background: var(--clr-danger);
+    color: var(--clr-dark);
 }
 
 
@@ -452,4 +468,8 @@ textarea::-webkit-scrollbar-thumb {
 
 /* dashboard section */
 
-.dashboard__title {}
+.dashboard__title {
+    text-align: center;
+    position: relative;
+    margin: 100px 0 20px;
+}
