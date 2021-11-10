@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fileupload = require('express-fileupload');
+const port = process.env.PORT || 3000;
 
 let initial_path = path.join(__dirname, "public");
 const app = express();
@@ -11,7 +12,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(initial_path, "home.html"));
 })
 
-app.listen("3000", () => {
+app.listen("port", () => {
     console.log('listening......');
 })
 
