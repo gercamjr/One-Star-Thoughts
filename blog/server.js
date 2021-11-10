@@ -5,6 +5,7 @@ const port = process.env.PORT || 443;
 
 let initial_path = path.join(__dirname, "public");
 const app = express();
+app.set('port', (process.env.PORT || 3000));
 app.use(express.static(initial_path));
 app.use(fileupload());
 
@@ -12,8 +13,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(initial_path, "home.html"));
 })
 
-app.listen("port", () => {
-    console.log('listening......');
+app.listen(app.get('port'), () => {
+    console.log('listening......on port'.app.get('port'));
 })
 
 app.get('/editor', (req, res) => {
