@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(app.get('port'), () => {
-    console.log('listening......on port'.app.get('port'));
+    console.log('listening......on port');
 })
 
 app.get('/editor', (req, res) => {
