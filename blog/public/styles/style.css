@@ -35,13 +35,10 @@ body {
 }
 
 html {
-    min-height: 100%;
     box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    width: 100%;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
@@ -274,7 +271,7 @@ header {
 #stars:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    bottom: 150rem;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -292,7 +289,7 @@ header {
 #stars2:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    bottom: 150rem;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -310,7 +307,7 @@ header {
 #stars3:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    bottom: 150rem;
     width: 3px;
     height: 3px;
     background: transparent;
@@ -322,7 +319,7 @@ header {
         transform: translateY(0px);
     }
     to {
-        transform: translateY(-2000px);
+        transform: translateY(-100rem);
     }
 }
 
@@ -330,7 +327,7 @@ header {
 /* section posts */
 
 .section__posts {
-    max-width: 900px;
+    max-width: 50rem;
     margin: 0 auto;
     padding: 10rem 2rem;
 }
@@ -429,37 +426,37 @@ p:last-child {
 /* banner section */
 
 .banner {
+    display: flex;
     width: 100%;
-    height: 400px;
-    position: relative;
+    max-width: 60rem;
+    margin: 1em auto;
+    min-height: 20rem;
+    border-radius: 10px;
     background: #e7e7e7;
     background-size: cover;
     background-position: center;
 }
 
 .banner__upload--btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+    padding: 1em;
 }
 
-.banner__upload--btn img {
-    width: 20px;
+.icon {
+    position: relative;
+    top: -12px;
+    left: -7px;
 }
 
 
 /* post editor */
 
 .blog__editor {
-    width: 70vw;
+    width: 60rem;
     min-width: 400px;
     height: 100%;
     display: block;
@@ -524,7 +521,6 @@ textarea::-webkit-scrollbar-thumb {
     background: var(--clr-light);
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .blog__published,
