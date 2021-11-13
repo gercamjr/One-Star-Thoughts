@@ -329,7 +329,7 @@ header {
 .section__posts {
     max-width: 50rem;
     margin: 0 auto;
-    padding: 10rem 2rem;
+    padding: 4rem 2rem;
 }
 
 .blog-image {
@@ -355,7 +355,7 @@ p:last-child {
 
 .section__posts--card {
     margin-bottom: 10rem;
-    padding: 4rem;
+    padding: 2rem;
     background: var(--clr-light);
     border-radius: 8px;
     box-shadow: 0px 0px 0 1px rgba(32, 71, 84, 0.03), 0px 0px 0 3px rgba(32, 71, 84, 0.02);
@@ -545,6 +545,8 @@ textarea::-webkit-scrollbar-thumb {
 
 .blog__published--article {
     padding: 0 3em;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .blog__published--title {
@@ -577,11 +579,11 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .sub-heading {
-    padding: 0 5vw;
-    color: #2d2d2d;
+    width: 100%;
+    color: var(--clr-light);
     font-weight: 500;
     font-size: 40px;
-    margin-top: 80px;
+    margin: 0 auto;
 }
 
 #edit-blog-btn {
@@ -611,6 +613,7 @@ textarea::-webkit-scrollbar-thumb {
 /* dashboard section */
 
 .dashboard__title {
+    color: var(--clr-light);
     text-align: center;
     position: relative;
     margin: 100px 0 20px;

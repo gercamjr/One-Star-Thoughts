@@ -40,6 +40,9 @@
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
+    <div class="title" id='title'>
+        <h1 data-scroll>One Star Thoughts</h1>
+    </div>
     <div class="banner"></div>
 
     <div class="blog__published">
@@ -50,9 +53,12 @@
         </div>
     </div>
 
-    <h1 class="sub-heading">Read more</h1>
+    <div class="title">
+        <h1>Read More</h1>
+    </div>
 
     <section class="section__posts">
+
 
     </section>
 
@@ -64,7 +70,11 @@
     <script src="js/home.js"></script>
     <script src="js/blog.js"></script>
     <script src="js/nav.js"></script>
-
+    <script>
+        ScrollOut({
+            threshold: .2
+        });
+    </script>
 
 </body>
 
