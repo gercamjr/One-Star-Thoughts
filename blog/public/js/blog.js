@@ -14,13 +14,11 @@ const setupBlog = (data) => {
     const banner = document.querySelector('.banner');
     const blogTitle = document.querySelector('.blog__published--title');
     const titleTag = document.querySelector('title');
-    const publish = document.querySelector('.blog__published--date');
+
 
     banner.style.backgroundImage = `url(${data.bannerImage})`;
 
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
-    publish.innerHTML += data.publishedAt;
-    publish.innerHTML += `-- ${data.author}`;
 
     auth.onAuthStateChanged((user) => {
         if (user) {
