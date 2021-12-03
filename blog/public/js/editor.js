@@ -9,6 +9,9 @@ let bannerPath;
 const publishBtn = document.querySelector('.publish-btn');
 const uploadInput = document.querySelector('#image-upload');
 
+// slug
+const slug = document.getElementById('slug');
+
 //tag picker
 const picker = new TP(document.querySelector('#tags'), state = {
     escape: [','],
@@ -63,14 +66,16 @@ publishBtn.addEventListener('click', () => {
     if (articleField.value.length && blogTitleField.value.length) {
 
         let docName;
+        let id = '';
         if (blogID[0] == 'editor') {
             let letters = 'abcdefghijklmnopqrstuvwxyz';
-            let blogTitle = blogTitleField.value.split(" ").join("-");
-            let id = '';
+            // let blogTitle = blogTitleField.value.split(" ").join("-");
+
             for (let i = 0; i < 4; i++) {
                 id += letters[Math.floor(Math.random() * letters.length)];
             }
-            let docName = `${blogTitle}-${id}`;
+            // docName = `${blogTitle}-${id}`;
+            docName = slugify(document.getElementById('slug').value);
 
         } else {
             docName = decodeURI(blogID[0]);
@@ -78,18 +83,18 @@ publishBtn.addEventListener('click', () => {
         // generating id
 
 
-        // setting up docName
+        // setting up slug
 
         let date = new Date(); // for published at info
 
         //access firstore with db variable;
         db.collection("blogs").doc(docName).set({
+                id: `${id}`,
                 title: blogTitleField.value,
                 article: articleField.value,
                 bannerImage: bannerPath,
                 publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
-                author: 'One Star',
-                tags: picker.tags
+                author: 'Gera'
             })
             .then(() => {
                 location.href = `/${docName}`;
@@ -124,4 +129,11 @@ if (blogID[0] != "editor") {
             location.replace("/");
         }
     })
+}
+
+function slugify(text) {
+    return text.toString().toLowerCase().trim()
+        .replace(/&/g, '-and-')
+        .replace(/[\s\W-]+/g, '-')
+        .replace(/[^a-zA-Z0-9-_]+/g, '');
 }
