@@ -94,7 +94,8 @@ publishBtn.addEventListener('click', () => {
                 article: articleField.value,
                 bannerImage: bannerPath,
                 publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
-                author: 'Gera'
+                author: 'One Star Thoughts',
+                tags: picker.tags
             })
             .then(() => {
                 location.href = `/${docName}`;
@@ -125,6 +126,9 @@ if (blogID[0] != "editor") {
             banner.style.backgroundImage = `url(${bannerPath})`;
             blogTitleField.value = data.title;
             articleField.value = data.article;
+            slug.value = blogID[0];
+            console.log("tags saved before: " + data.tags);
+            picker.set(data.tags);
         } else {
             location.replace("/");
         }
