@@ -42,17 +42,17 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="login-button">Home</a></li>
             </ul>
         </nav>
     </header>
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
+    <main class="page__main">
+        <section class="posts">
 
-    <section class="section__posts">
-
-        <!-- 
+            <!-- 
             <div class="section__posts--card">
                 <img src="img/header.png" class="blog-image" alt="">
                 <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
@@ -60,7 +60,10 @@
                 <a href="/" class="btn dark">read</a>
             </div>
             -->
-    </section>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jquery.parallax.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
@@ -73,6 +76,10 @@
         ScrollOut({
             threshold: .2
         });
+        $('.my-parallax-window').parallax({
+            speed: -.2,
+            sliderSelector: '>.my-parallax-slider',
+        })
     </script>
 
 

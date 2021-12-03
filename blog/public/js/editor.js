@@ -9,6 +9,15 @@ let bannerPath;
 const publishBtn = document.querySelector('.publish-btn');
 const uploadInput = document.querySelector('#image-upload');
 
+//tag picker
+const picker = new TP(document.querySelector('#tags'), state = {
+    escape: [','],
+    join: ', ',
+    max: 9999,
+    min: 0,
+    pattern: null
+});
+
 bannerImage.addEventListener('change', () => {
     uploadImage(bannerImage, "banner");
 })
@@ -79,7 +88,8 @@ publishBtn.addEventListener('click', () => {
                 article: articleField.value,
                 bannerImage: bannerPath,
                 publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
-                author: 'One Star'
+                author: 'One Star',
+                tags: picker.tags
             })
             .then(() => {
                 location.href = `/${docName}`;

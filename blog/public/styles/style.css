@@ -36,24 +36,23 @@ body {
 
 html {
     box-sizing: border-box;
+    height: 100%;
 }
 
 body {
+    height: 100%;
+    width: 100%;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%) no-repeat;
-    overflow-x: hidden;
+    background-attachment: fixed;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: inherit;
-}
-
-section {
-    padding: 5em 2em;
 }
 
 img {
@@ -135,17 +134,21 @@ h3 {
 /* header */
 
 header {
+    position: sticky;
+    top: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1em;
 }
 
 nav {
     width: 50%;
     margin: 0 auto;
-    background-color: #131418;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    border: 2px solid;
+    border-color: var(--clr-light);
+    border-radius: 2em;
     display: flex;
     z-index: 10;
 }
@@ -208,9 +211,7 @@ nav {
 /*Styling Buttons*/
 
 .login-button {
-    background-color: transparent;
-    border: 1.5px solid #f2f5f7;
-    border-radius: 2em;
+    color: var(--clr-light);
     padding: 0.6rem 0.8rem;
     margin-left: 2vw;
     font-size: 1rem;
@@ -218,9 +219,8 @@ nav {
 }
 
 .login-button:hover {
-    color: #131418;
-    background-color: #f2f5f7;
-    border: 1.5px solid #f2f5f7;
+    color: var(--clr-dark);
+    background-color: #000;
     transition: all ease-in-out 350ms;
 }
 
@@ -423,10 +423,12 @@ nav {
 
 /* section posts */
 
-.section__posts {
+.page__main {
+    height: 40vh;
     max-width: 50rem;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    margin-top: 50px;
+    overflow-y: auto;
 }
 
 .blog-image {
@@ -450,7 +452,8 @@ p:last-child {
     line-height: 30px;
 }
 
-.section__posts--card {
+.posts__card {
+    scroll-snap-align: start;
     margin-bottom: 10rem;
     padding: 2rem;
     background: var(--clr-light);
@@ -458,7 +461,7 @@ p:last-child {
     box-shadow: 0px 0px 0 1px rgba(32, 71, 84, 0.03), 0px 0px 0 3px rgba(32, 71, 84, 0.02);
 }
 
-.section__posts--card:last-child {
+.posts__card:last-child {
     margin-bottom: 0;
 }
 

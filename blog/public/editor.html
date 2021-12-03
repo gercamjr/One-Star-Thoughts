@@ -19,6 +19,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="stylesheet" href="styles/tag-picker-index.min.css">
 </head>
 
 <body>
@@ -43,13 +44,20 @@
     <div class="title" id='title'>
         <h1 data-scroll>One Star Thoughts</h1>
     </div>
-    <div class="banner">
-        <input type="file" accept="image/*" id="banner-upload" hidden>
-        <label for="banner-upload" class="banner__upload--btn"><i class="icon fas fa-upload"></i></label>
-    </div>
+
 
     <div class="blog__editor">
+        <div class="banner">
+            <input type="file" accept="image/*" id="banner-upload" hidden>
+            <label for="banner-upload" class="banner__upload--btn"><i class="icon fas fa-upload"></i></label>
+        </div>
         <textarea type="text" class="blog__editor--title" placeholder="Blog title..."></textarea>
+        <label for="slug" class="banner__editor--slug--label">Slug:</label>
+        <input type="text" id="slug" class="blog__editor--slug" placeholder="unique blog url">
+
+        <label for="tags" class="tags__label">Tags:</label>
+        <input type='text' id='tags' class="tags__input" placeholder="add commas between tags">
+
         <textarea type="text" class="blog__editor--article" placeholder="Start writing here..."></textarea>
 
 
@@ -62,7 +70,7 @@
 
     <script src="https://kit.fontawesome.com/0955c01d8d.js" crossorigin="anonymous"></script>
 
-
+    <script src="../js/tag-picker-index.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>

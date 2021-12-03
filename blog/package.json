@@ -12,9 +12,8 @@
         "url": "git+https://github.com/gercamjr/One-Star-Thoughts.git"
     },
     "keywords": [
-        "blog",
-        "mern",
-        "react"
+        "blog"
+
     ],
     "author": "Gerardo Camorlinga Jr.",
     "license": "ISC",

@@ -5,7 +5,7 @@ const links = document.querySelectorAll(".nav-links li");
 auth.onAuthStateChanged((user) => {
     if (user) {
         //user is logged in
-        navLinks.innerHTML += `<li><a href="/admin">Dashboard</a></li>
+        navLinks.innerHTML += `<li><a href="/admin" class="login-button">Dashboard</a></li>
         <li><a class="login-button" href="#" onclick="logoutUser()">Logout</a></li>`
     } else {
         navLinks.innerHTML += `<li><a class="login-button" href="/admin">Login</a></li>`
