@@ -2,7 +2,7 @@ let ui = new firebaseui.auth.AuthUI(auth);
 
 let login = document.querySelector('.login');
 
-const blogSection = document.querySelector('.section__posts');
+const blogSection = document.querySelector('.dashboard__cards');
 
 auth.onAuthStateChanged((user) => {
     if (user) {
@@ -37,7 +37,7 @@ const getUserWrittenBlogs = () => {
         blogs.forEach((blog) => {
             createBlog(blog);
         })
-        ScrollOut().index();
+
     }).catch((error) => {
         console.log("Error getting blogs");
     })
@@ -46,14 +46,17 @@ const getUserWrittenBlogs = () => {
 const createBlog = (blog) => {
     let data = blog.data();
     blogSection.innerHTML += `
-    <div class="section__posts--card" data-scroll>
-        <img src="${data.bannerImage}" class="blog-image" alt="">
-        <h1 class="blog-title">${data.title.substring(0, 100) + '...'}</h1>
-        <p class="blog-overview">${data.article.substring(0, 200) + '...'}</p>
-        <a href="/${blog.id}" class="section__posts--card--button btn dark">read</a>
+    <div class="post__card--dashboard">
+        <div class="post__wrapper--dashboard">
+            <img src="${data.bannerImage}" class="blog-image" alt="">
+            <h1 class="blog-title">${data.title.substring(0, 100) + '...'}</h1>
+            <p class="blog-overview">${data.article.substring(0, 200) + '...'}</p>
+            <a href="/${blog.id}" class="section__posts--card--button btn dark">read</a>
+        
         <a href="/${blog.id}/editor" class="section__posts--card--button btn grey">edit</a>
         <a href="#" onclick="deleteBlog('${blog.id}')" class="section__posts--card--button btn danger">delete</a>
-    </div>
+        </div>
+        </div>
     `;
 }
 

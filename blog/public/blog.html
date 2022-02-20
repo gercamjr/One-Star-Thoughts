@@ -27,41 +27,46 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <header>
+    <div class="wrapper">
+        <div class='stars'></div>
+        <div class="stars2"></div>
+        <div class='stars3'></div>
+        <header>
+            <div class="logo">
 
-        <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="/about" class="nav__link">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
-    <div class="title" id='title'>
-        <h1 data-scroll>One Star Thoughts</h1>
-    </div>
-    <div class="banner"></div>
+            </div>
+            <div class="title" id='title'>
+                <h1 data-scroll>One Star Thoughts</h1>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/" class="login-button">Home</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="blog__published">
-        <h1 class="blog__published--title"></h1>
-        <a href="" class="blog__published--btn btn grey" id="edit-blog-btn">edit blog</a>
-        <div class="blog__published--article">
+        <div class="posts">
+
+            <div class="banner"></div>
+
+            <div class="blog__published">
+                <h1 class="blog__published--title"></h1>
+                <a href="" class="blog__published--btn btn grey" id="edit-blog-btn">edit blog</a>
+                <div class="blog__published--article">
+                </div>
+            </div>
+
+            <div class="title">
+                <h1>Read More</h1>
+            </div>
         </div>
+
     </div>
-
-    <div class="title">
-        <h1>Read More</h1>
-    </div>
-
-    <section class="posts">
-
-
-    </section>
 
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
